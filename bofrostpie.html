@@ -9,9 +9,11 @@
 
 <body>
 	<div id="canvas-holder" style="width:100%">
-		<canvas id="chart-area" />
+		<canvas id="chart-area" style="width:100%" />
 	</div>
 	<script>
+	Chart.defaults.global.legend.display = false;
+	Chart.defaults.global.tooltips.enabled = false;
 	var config = {
 		type: 'pie',
 		data: {
@@ -25,6 +27,10 @@
 				],
 			}, 
 
+			],
+			labels: [
+				"Possessori di animali domestici",
+				"Senza animali domestici"
 			]
 		},
 		options: {
