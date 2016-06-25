@@ -12,9 +12,6 @@
 	<div id="canvas-holder" class="row" style="padding: 2em">
 		<canvas id="chart-area" />
 	</div>
-	<div id="canvas-holder" class="row" style="padding: 2em">
-		<canvas id="chart-2-area" />
-	</div>
 	<script>
 	Chart.defaults.global.legend.display = false;
 	Chart.defaults.global.tooltips.enabled = false;
@@ -56,50 +53,9 @@
 			}
 		}
 	};
-	var config2 = {
-		type: 'line',
-		data: {
-			labels: ["2011", "2012", "2013", "2014"],
-			datasets: [{
-				label: "Vendite in valore (Mio €)",
-				data: [1711.7, 1753.4, 1787.5, 1830.0],
-				fill: false,
-				backgroundColor: ["#CC1719"],
-				borderColor: ["#CC1719"]
-			}]
-		},
-		options: {
-			responsive: true,
-			legend: {
-				position: 'bottom',
-			},
-			hover: {
-				mode: 'label'
-			},
-			scales: {
-				xAxes: [{
-					display: true,
-					scaleLabel: {
-						display: false,
-						labelString: 'Anno'
-					}
-				}],
-				yAxes: [{
-					display: true,
-					scaleLabel: {
-						display: false,
-						labelString: 'Vendite in valore'
-					}
-				}]
-			}
-		}
-	};
-
 	window.onload = function() {
 		var ctx = document.getElementById("chart-area").getContext("2d");
 		window.myPie = new Chart(ctx, config);
-		var ctx2 = document.getElementById("chart-2-area").getContext("2d");
-		window.myPie2 = new Chart(ctx2, config2);
 	};
 	</script>
 </body>
