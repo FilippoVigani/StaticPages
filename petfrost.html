@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Petfrost</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" />
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<link rel="stylesheet" href="http://s.mlcdn.co/animate.css" />
+	<script type="text/javascript">
+	$.fn.extend({
+		animateCss: function(animationName) {
+			var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+			return $(this).addClass('animated ' + animationName).one(animationEnd, function() {
+				$(this).removeClass('animated ' + animationName);
+			});
+		}
+	});
+
+	$(document).ready(() => {
+
+		$('.calcolatore input').on('input', (e) =>{
+			$('.calcolatore .calcres').text('Pasto giornaliero: ');
+			$('.calcolatore .finalres').text(((+$('.calcolatore input').val())*20)+ 'g');
+		});
+
+		$('.backbtn').click(() => {
+			$('.groupofbuttons').removeClass('hidden');
+			$('.backbtn').addClass('hidden');
+			$('.calcolatore').addClass('hidden');
+			$('.catalogo').addClass('hidden');
+			$('.phonecontent').css('background-image', 'url("bg-app.jpg")');
+			$('.phonecontent img').removeClass('hidden');
+		});
+
+		$('#catalogo').click(() => {
+			$('.groupofbuttons').addClass('hidden');
+			$('.backbtn').removeClass('hidden');
+			$('.catalogo').removeClass('hidden');
+			$('.phonecontent').css('background-image', 'url("listino.jpg")');
+			//$('.phonecontent>img').addClass('hidden');
+		});
+		$('#premi').click(() => {
+			$('.groupofbuttons').addClass('hidden');
+			$('.backbtn').removeClass('hidden');
+		});
+		$('#calcolatore').click(() => {
+			$('.groupofbuttons').addClass('hidden');
+			$('.backbtn').removeClass('hidden');
+			$('.calcolatore').removeClass('hidden').animateCss('zoomIn');
+		});
+		$('#newsletter').click(() => {
+			$('.groupofbuttons').addClass('hidden');
+			$('.backbtn').removeClass('hidden');
+		});
+		$('#about').click(() => {
+			$('.groupofbuttons').addClass('hidden');
+			$('.backbtn').removeClass('hidden');
+		});
+	});
+	</script>
+</head>
+
+<body class="container-fluid">
+	<div class="phoneframe">
+		<div class="phonecontent">
+			<a class="backbtn hidden" ><img src="back.svg" /></a>
+			<img src="petgrost_LOGO.png" />
+			<div class="bfpanel groupofbuttons">
+				<button id="catalogo" class="btn btn-default">Listino prodotti</button>
+				<button id="premi" class="btn btn-default">Catalogo Premi</button>
+				<button id="calcolatore" class="btn btn-default">Calcolatore BARF</button>
+				<button id="newsletter" class="btn btn-default">Iscriviti alla newsletter</button>
+				<button id="about" class="btn btn-default">Per saperne di più</button>
+			</div>
+			<div class="bfpanel calcolatore hidden">
+				<img src="balance-icon.png" />
+
+				<label for="peso">Peso in kg</label>
+				<input type="text" id="peso" />
+				<label class="calcres">Pasto giornaliero:</label>
+				<label class="finalres">TBD</label>
+				<button class="btn btn-default recommendedbtn">Prodotti consigliati</button>
+			</div>
+		</div>
+	</div>
+	</div>
+</body>
+
+</html>

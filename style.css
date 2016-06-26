@@ -1,0 +1,99 @@
+.phonecontent {
+	width: 379px;
+	height: 691px;
+	background-image: url(bg-app.jpg);
+	background-size: cover;
+	text-align: center;
+}
+
+.phoneframe {
+	width: 396px;
+	height: 783px;
+	padding: 51px 0px 0px 8px;
+	background-image: url('phoneframe.png');
+	background-repeat: no-repeat;
+}
+
+.groupofbuttons {
+	display: table;
+	vertical-align: middle;
+}
+
+.bfpanel {
+	width: 100%;
+	height: 100%;
+}
+
+.btn, .btn:hover, .btn:focus, .btn:active {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+	width: 100%;
+	padding: 1.5em 0;
+	background: rgba(255, 255, 255, 0.5);
+	display: table-cell;
+	vertical-align: middle;
+	margin-top: 1.5em;
+	font: sans-serif;
+	font-weight: bold;
+	color: #CE1628;
+	font-size: 1.1em;
+	border: none;
+	outline: none;
+}
+
+.phonecontent>img {
+	max-width: 70%;
+	height: auto;
+	margin: 2em auto;
+}
+
+.calcolatore label {
+	color: #FFF;
+	font-size: 1.4em;
+	display: block;
+	padding: 1em;
+	text-shadow: 0 0 20px #000000;
+}
+
+.calcolatore .calcres {
+	padding-top: 2em;
+	padding-bottom: 0.7em;
+	font-size: 1.6em;
+}
+
+.calcolatore .finalres {
+	font-size: 5em;
+	padding-top: 0;
+	color: #CC1719;
+	padding-bottom: 0em;
+}
+
+.calcolatore input {
+	padding: 0em;
+	font-size: 2em;
+	text-align: center;
+}
+
+.calcolatore img {
+	margin: 0px 2em;
+	width: 100px;
+	height: 100px;
+}
+
+.backbtn {
+	position: absolute;
+}
+
+.backbtn img {
+	margin-top: 20px;
+	margin-left: -20px;
+	width: 40px;
+	height: 40px;
+}
+
+.recommendedbtn, .recommendedbtn:hover, .recommendedbtn:focus, .recommendedbtn:active {
+	background: rgba(255, 20, 20, 0.5);
+	color: #FFF;
+}
