@@ -21,9 +21,24 @@
 
 	$(document).ready(() => {
 
-		$('.calcolatore input').on('input', (e) =>{
+		$('.recommendedbtn').click(e => {
+			$('.groupofbuttons').removeClass('hidden');
+			$('.backbtn').addClass('hidden');
+			$('.calcolatore').addClass('hidden');
+			$('.catalogo').addClass('hidden');
+			$('.phonecontent').css('background-image', 'url("bg-app.jpg")');
+			$('.phonecontent img').removeClass('hidden');
+			$('.groupofbuttons').addClass('hidden');
+			$('.backbtn').removeClass('hidden');
+			$('.catalogo').removeClass('hidden');
+			$('.phonecontent').css('background-image', 'url("listino.jpg")');
+			
+		});
+
+		$('.calcolatore input').on('input', (e) => {
 			$('.calcolatore .calcres').text('Pasto giornaliero: ');
-			$('.calcolatore .finalres').text(((+$('.calcolatore input').val())*20)+ 'g');
+			$('.calcolatore .finalres').text(((+$('.calcolatore input').val()) * 20) + 'g');
+			$('.recommendedbtn').removeClass('hidden');
 		});
 
 		$('.backbtn').click(() => {
@@ -66,7 +81,7 @@
 <body class="container-fluid">
 	<div class="phoneframe">
 		<div class="phonecontent">
-			<a class="backbtn hidden" ><img src="back.svg" /></a>
+			<a class="backbtn hidden"><img src="back.svg" /></a>
 			<img src="petgrost_LOGO.png" />
 			<div class="bfpanel groupofbuttons">
 				<button id="catalogo" class="btn btn-default">Listino prodotti</button>
@@ -77,12 +92,11 @@
 			</div>
 			<div class="bfpanel calcolatore hidden">
 				<img src="balance-icon.png" />
-
 				<label for="peso">Peso in kg</label>
 				<input type="text" id="peso" />
 				<label class="calcres">Pasto giornaliero:</label>
 				<label class="finalres">TBD</label>
-				<button class="btn btn-default recommendedbtn">Prodotti consigliati</button>
+				<button class="btn btn-default recommendedbtn hidden">Prodotti consigliati</button>
 			</div>
 		</div>
 	</div>
